@@ -167,14 +167,14 @@ __dist/index.html__
    </head>
    <body>
 -    <script src="./src/index.js"></script>
-+    <script src="main.js"></script>
++    <script src="bundle.js"></script>
    </body>
   </html>
 ```
 
 在这个设置中，`index.js` 显式要求引入的 `lodash` 必须存在，然后将它绑定为 `_`（没有全局作用域污染）。通过声明模块所需的依赖，webpack 能够利用这些信息去构建依赖图，然后使用图生成一个优化过的，会以正确顺序执行的 bundle。
 
-可以这样说，执行 `npx webpack`，会将我们的脚本作为[入口起点](/concepts/entry-points)，然后 [输出](/concepts/output) 为 `main.js`。Node 8.2+ 版本提供的 `npx` 命令，可以运行在初始安装的 webpack 包(package)的 webpack 二进制文件（`./node_modules/.bin/webpack`）：
+可以这样说，执行 `npx webpack`，会将我们的脚本作为[入口起点](/concepts/entry-points)，然后 [输出](/concepts/output) 为 `bundle.js`。Node 8.2+ 版本提供的 `npx` 命令，可以运行在初始安装的 webpack 包(package)的 webpack 二进制文件（`./node_modules/.bin/webpack`）：
 
 ``` bash
 npx webpack
